@@ -28,6 +28,8 @@ void	game_create(t_root *root, char *filename)
 	root->game->player_down = 0;
 	root->game->player_left = 0;
 	root->game->player_right = 0;
+	root->game->wolf = 0;
+	root->game->t_wc = 0;
 	map_create(root, filename);
 }
 
@@ -49,6 +51,7 @@ void	textures_create(t_root *root)
 	texture_load(root, &root->player[2], "./xpm/char/char3.xpm");
 	texture_load(root, &root->player[3], "./xpm/char/char4.xpm");
 	texture_load(root, &root->exit, "./xpm/exit.xpm");
+	texture_load(root, &root->wolf, "./xpm/wolf.xpm");
 	texture_load(root, &root->coll, "./xpm/potion.xpm");
 	texture_load(root, &root->wall, "./xpm/wall.xpm");
 	texture_load(root, &root->ground, "./xpm/floor.xpm");
@@ -66,6 +69,7 @@ t_root	*root_create(char *filename)
 	root->mlx = 0;
 	root->mlx_win = 0;
 	*root->player = 0;
+	root->wolf = 0;
 	root->exit = 0;
 	root->coll = 0;
 	root->wall = 0;

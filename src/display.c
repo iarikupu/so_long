@@ -6,7 +6,7 @@
 /*   By: iarikupu <iarikupu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 15:29:34 by iarikupu          #+#    #+#             */
-/*   Updated: 2021/12/13 10:58:14 by iarikupu         ###   ########.fr       */
+/*   Updated: 2021/12/14 06:54:09 by iarikupu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void	add_stuff(t_root *root, int i, int j)
 	if (root->game->player.x == i && root->game->player.y == j)
 		mlx_put_image_to_window(root->mlx, root->mlx_win,
 			root->player, i * 64, j * 64);
+	k = -1;
+	while (++k < root->game->count_wolf)
+		if (root->game->wolf[k].x == i && root->game->wolf[k].y == j)
+			mlx_put_image_to_window(root->mlx, root->mlx_win,
+				root->wolf, i * 64, j * 64);
 }
 
 void	draw_map(t_root *root)

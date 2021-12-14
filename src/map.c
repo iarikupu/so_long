@@ -6,7 +6,7 @@
 /*   By: iarikupu <iarikupu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:32:31 by iarikupu          #+#    #+#             */
-/*   Updated: 2021/12/13 10:57:47 by iarikupu         ###   ########.fr       */
+/*   Updated: 2021/12/14 07:11:08 by iarikupu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	map_read(t_root *root, char *file)
 	map_check(root, file);
 	root->game->coll
 		= (t_coord *)malloc(sizeof(t_coord) * root->game->count_coll);
+	root->game->wolf
+		= (t_coord *)malloc(sizeof(t_coord) * root->game->count_wolf);
 	if (root->game->coll == 0)
 	{
 		free(file);

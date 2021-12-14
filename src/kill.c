@@ -6,7 +6,7 @@
 /*   By: iarikupu <iarikupu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 15:18:55 by iarikupu          #+#    #+#             */
-/*   Updated: 2021/12/13 10:57:57 by iarikupu         ###   ########.fr       */
+/*   Updated: 2021/12/14 06:44:13 by iarikupu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	root_kill(t_root *root, char *errmsg, int errnum)
 			mlx_destroy_image(root->mlx, root->exit);
 		if (*root->player != 0)
 			mlx_destroy_image(root->mlx, *root->player);
+		if (root->wolf != 0)
+			mlx_destroy_image(root->mlx, root->wolf);
 		if (root->mlx_win != 0)
 			mlx_destroy_window(root->mlx, root->mlx_win);
 		if (root->mlx != 0)
@@ -45,6 +47,8 @@ void	game_kill(t_game *game)
 	{
 		if (game->coll != 0)
 			free(game->coll);
+		if (game->wolf != 0)
+			free(game->wolf);
 		if (game->map != 0)
 		{
 			i = 0;

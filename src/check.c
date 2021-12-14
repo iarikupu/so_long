@@ -6,7 +6,7 @@
 /*   By: iarikupu <iarikupu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 15:28:10 by iarikupu          #+#    #+#             */
-/*   Updated: 2021/12/13 10:58:21 by iarikupu         ###   ########.fr       */
+/*   Updated: 2021/12/14 06:49:02 by iarikupu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	isvalid(t_root *root, char *file, int i)
 		root->game->count_exit++;
 	else if (file[i] == 'C')
 		root->game->count_coll++;
+	else if (file[i] == 'X')
+		root->game->count_wolf++;
 	else if (file[i] == '1' || file[i] == '0')
 		return ;
 	else
